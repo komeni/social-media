@@ -44,7 +44,10 @@ body{
     background: var(--color-light);
     overflow-x: hidden;
 }
-
+.checker{
+    font-size: 1.5rem;
+    display: none;
+}
 .container{
     width: 80%;
     margin: 0 auto;
@@ -150,6 +153,7 @@ a{
     margin-top: 1rem;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
+    transition: all 300ms ease;
 }
 .left .sidebar .menu-item{
     display: flex;
@@ -159,6 +163,12 @@ a{
     cursor: pointer;
     transition: all 300ms ease;
     position: relative;
+}
+.left .sidebar .close {
+    margin-top: 3rem;
+    display: none; 
+    background: var(--color-danger);
+    border-bottom-left-radius: var(--card-border-radius);
 }
 .left .sidebar .menu-item:hover{
     background: var(--color-light);
@@ -627,6 +637,7 @@ main .container .right{
         position: fixed;
         bottom: 0;
         right: 0;
+        display: none;
     }
     .left .notifications-popup {
         position: absolute;
@@ -642,6 +653,9 @@ main .container .right{
     main .container .left .sidebar > div h3 {
         display: none;
     }
+    .left .sidebar .close {
+        display: flex; 
+    }
     main .container .middle{
         grid-column: 1/3;
     }
@@ -650,6 +664,9 @@ main .container .right{
     }
     .customize-theme .card {
         width: 92vw;
+    }
+    .checker{
+        display: block;
     }
 }
 

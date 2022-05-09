@@ -20,6 +20,19 @@ const bg1 = document.querySelector('.bg-1');
 const bg2 = document.querySelector('.bg-2');
 const bg3 = document.querySelector('.bg-3');
 
+const check = document.querySelector('.checker');
+const nav = document.querySelector('main .container .left')
+const close = document.querySelector('.close')
+
+
+// check.addEventListener('click', displayNav);
+check.addEventListener('click', () => {
+    nav.style.display = 'block';
+});
+close.addEventListener('click', () => {
+    nav.style.display = 'none';
+})
+
 
 
 const changeActiveItem = () => {
@@ -155,11 +168,15 @@ const changeBg = () => {
     root.style.setProperty('--dark-color-lightness', darkColorLightness);
 }
 bg1.addEventListener('click', () => {
+
+    darkColorLightness = '17%';
+    whiteColorLightness = '100%';
+    lightColorLightness = '95%';
     bg1.classList.add('active');
     bg2.classList.remove('active');
     bg3.classList.remove('active');
 
-    window.location.reload();
+    changeBg();
 })
 bg2.addEventListener('click', () => {
     darkColorLightness = '95%';
